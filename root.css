@@ -1,0 +1,294 @@
+:root {
+    --pale-violet: hsl(276, 100%, 81%);
+    --text-chat-left: hsl(276, 55%, 52%);
+    --text-chat-right: hsl(271, 15%, 43%);
+    --text-placeholder: hsl(206, 6%, 79%);
+    --main-heading: hsl(271, 36%, 24%);
+    --paragraph: hsl(270, 7%, 64%);
+    --light-magenta: hsl(293, 100%, 63%);
+    --light-violet: hsl(264, 100%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --background-app: hsl(270, 20%, 96%);
+    --submit-button: hsl(271, 36%, 24%);
+    --radio-button-outline: hsl(289, 100%, 72%);
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Rubik, serif;
+    background-color: var(--background-app);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    padding-bottom: 2rem;
+}
+
+.curve {
+    position: absolute;
+    z-index: -1;
+    --bottom-radius: 800px;
+    height: 50vh;
+    width: 100vw;
+    transform: translateX(-50vw);
+    background: linear-gradient(to bottom, var(--light-magenta), var(--light-violet));
+    border-radius: 0 0 var(--bottom-radius) var(--bottom-radius);
+}
+
+.iphone-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    position: relative;
+}
+
+.intro {
+    text-align: center;
+    padding: 4rem 1rem 3rem 1rem;
+}
+
+.intro > h1 {
+    color: var(--main-heading);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.intro > p {
+    color: var(--paragraph);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+.iphone {
+    position: relative;
+    height: 36rem;
+    aspect-ratio: 0.47;
+    background-color: var(--background-app);
+    border-radius: 20px;
+    box-shadow: 0 0 0 0.7rem var(--white), 0 1rem 3rem 0.01rem grey;
+}
+
+.iphone:before {
+    --width: 8.5rem;
+    --height: 1.3rem;
+    position: absolute;
+    left: 50%;
+    margin-left: calc(var(--width) / -2);
+    width: var(--width);
+    height: var(--height);
+    content: '';
+    background-color: var(--white);
+    border-radius: 0 0 1.2rem 1.2rem;
+}
+
+.colored-head {
+    background: linear-gradient(to right, var(--light-violet), var(--light-magenta));
+    border-radius: 20px 20px 5px 5px;
+    padding: 2rem 1rem 0.8rem 1rem;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 1.6rem;
+    aspect-ratio: 1;
+    background-image: url("images/avatar.jpg");
+    background-size: contain;
+    border: 1px solid white;
+    margin-right: 0.7rem;
+    margin-left: 0.3rem;
+}
+
+.contact-info {
+    font-size: 0.79rem;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+}
+
+.status {
+    margin-top: 0.18rem;
+    font-size: 0.65rem;
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+.fa-ellipsis-vertical {
+    float: right;
+}
+
+.left-head {
+    display: flex;
+    align-items: center;
+}
+
+.chat {
+    position: relative;
+    padding-top: 0.7rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.chat-bubble {
+    display: flex;
+}
+
+.right-chat-bubble {
+    justify-content: end;
+}
+
+.chat-bubble > p {
+    padding: 0.5rem;
+    font-size: x-small;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    max-width: 75%;
+}
+
+.left-chat-bubble > p {
+    color: var(--text-chat-left);
+    background-color: hsl(270, 20%, 90%);
+    border-radius: 12px 12px 12px 2px;
+}
+
+.right-chat-bubble > p {
+    color: var(--text-chat-right);
+    background-color: var(--white);
+    box-shadow: 0 4px 10px -8px grey;
+    border-radius: 12px 12px 2px 12px;
+}
+
+.chat-pic-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.chat-pic-container > *:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.chat-pic {
+    height: 3.3rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 0.75rem;
+}
+
+.price-option {
+    background: linear-gradient(to right, var(--light-magenta), var(--light-violet));
+    padding: 0.8rem;
+    font-size: x-small;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px 12px 12px 2px;
+    color: var(--white);
+}
+
+.price {
+    font-size: medium;
+    font-weight: bold;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio] + label {
+    position: relative;
+    margin-left: 1.4rem;
+}
+
+input[type=radio] + label::before {
+    content: '';
+    height: 1.1rem;
+    aspect-ratio: 1;
+    position: absolute;
+    left: -1.7rem;
+    top: -0.2rem;
+    display: inline;
+    background: transparent;
+    border: 2px solid var(--radio-button-outline);
+    border-radius: 50%;
+}
+
+.text-input-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.8rem;
+}
+
+.custom-input {
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-input > input {
+    outline: none;
+    border: none;
+    color: hsl(270, 20%, 80%);
+}
+
+.custom-input > input::placeholder {
+    outline: none;
+    border: none;
+    color: hsl(270, 20%, 80%);
+}
+
+.chevron-input {
+    color: white;
+    border-radius: 50%;
+    height: 2rem;
+    aspect-ratio: 1;
+    background-color: var(--submit-button);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 700px) {
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro {
+        max-width: 33%;
+        margin-left: 5rem;
+        text-align: left;
+    }
+
+    .curve {
+        --bottom-radius: 1000px;
+        height: 90vh;
+        width: 30vw;
+        transform: translateX(-5vw);
+        background: linear-gradient(to bottom, var(--light-magenta), var(--light-violet));
+        border-radius: 0 0 var(--bottom-radius) var(--bottom-radius);
+    }
+}
