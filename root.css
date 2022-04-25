@@ -164,6 +164,46 @@ html {
     border-radius: 12px 12px 12px 2px;
 }
 
+.left-message, .right-message {
+    opacity: 0;
+    animation-name: fade-in-right;
+    animation-duration: 1s;
+    animation-delay: 100s;
+    animation-fill-mode: forwards;
+}
+
+.left-message {
+    animation-name: fade-in-right;
+}
+
+.right-message {
+    animation-name: fade-in-left;
+}
+
+@keyframes fade-in-right {
+    0% {
+        opacity: 0;
+        transform: translate(-1rem);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translate(0);
+    }
+}
+
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translate(1rem);
+    }
+
+    to {
+        opacity: 100%;
+        transform: translate(0);
+    }
+}
+
 .right-chat-bubble > p {
     color: var(--text-chat-right);
     background-color: var(--white);
